@@ -1,12 +1,14 @@
 import {Component} from 'angular2/core';
 
-
 @Component({
 	selector: 'todo-app',
 	templateUrl: 'app/app.html'
 })
+
+
 export default class Form{
   countries: Array<string>;
+
   firstName: string;
   firstNameError: string;
   lastName: string;
@@ -49,7 +51,7 @@ export default class Form{
     let valid = true;
 // city error
     if(this.city === "") {
-      this.cityError = "City field is required!";
+      this.cityError = "City field is required***";
       valid = false;
     }
 
@@ -59,7 +61,7 @@ export default class Form{
     }
 // postcode error
     if(this.postcode === "") {
-      this.postcodeError = "Postcode field is required!";
+      this.postcodeError = "Postcode field is required***";
       valid = false;
     }
 
@@ -72,7 +74,7 @@ export default class Form{
 // address error
 
     if(this.address === "") {
-     this.addressError = "Address field is required!";
+     this.addressError = "Address field is required***";
      valid = false;
     }
 
@@ -83,7 +85,7 @@ export default class Form{
 
 // firstname error
     if(this.firstName === "") {
-     this.firstNameError = "First Name field is required!";
+     this.firstNameError = "First Name field is required***";
      valid = false;
     }
 
@@ -93,7 +95,7 @@ export default class Form{
     }
 // lastname error
     if(this.lastName === "") {
-     this.lastNameError = "Last name field is required!";
+     this.lastNameError = "Last Name field is required***";
      valid = false;
     }
 
@@ -103,7 +105,7 @@ export default class Form{
     }
 // email error
     if(this.email === "") {
-     this.emailError = " the Email field is required!";
+     this.emailError = " Email field is required***";
      valid = false;
     }
 
@@ -113,7 +115,7 @@ export default class Form{
     }
 // phone error 
     if(this.phone === "") {
-     this.phoneError = "Phone Number field is required!";
+     this.phoneError = "Phone Number field is required***";
      valid = false;
     }
 

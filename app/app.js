@@ -31,7 +31,7 @@ var Form = (function () {
         var valid = true;
         // city error
         if (this.city === "") {
-            this.cityError = "City field is required!";
+            this.cityError = "City field is required***";
             valid = false;
         }
         if (valid === true) {
@@ -40,7 +40,7 @@ var Form = (function () {
         }
         // postcode error
         if (this.postcode === "") {
-            this.postcodeError = "Postcode field is required!";
+            this.postcodeError = "Postcode field is required***";
             valid = false;
         }
         if (valid === true) {
@@ -50,7 +50,7 @@ var Form = (function () {
         }
         // address error
         if (this.address === "") {
-            this.addressError = "Address field is required!";
+            this.addressError = "Address field is required***";
             valid = false;
         }
         if (valid === true) {
@@ -59,7 +59,7 @@ var Form = (function () {
         }
         // firstname error
         if (this.firstName === "") {
-            this.firstNameError = "First Name field is required!";
+            this.firstNameError = "First Name field is required***";
             valid = false;
         }
         if (valid === true) {
@@ -68,7 +68,7 @@ var Form = (function () {
         }
         // lastname error
         if (this.lastName === "") {
-            this.lastNameError = "Last name field is required!";
+            this.lastNameError = "Last Name field is required***";
             valid = false;
         }
         if (valid === true) {
@@ -77,7 +77,7 @@ var Form = (function () {
         }
         // email error
         if (this.email === "") {
-            this.emailError = " the Email field is required!";
+            this.emailError = " Email field is required***";
             valid = false;
         }
         if (valid === true) {
@@ -86,7 +86,7 @@ var Form = (function () {
         }
         // phone error 
         if (this.phone === "") {
-            this.phoneError = "Phone Number field is required!";
+            this.phoneError = "Phone Number field is required***";
             valid = false;
         }
         if (valid === true) {

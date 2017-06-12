@@ -5,16 +5,16 @@
   </div>
 
   <div id='middle-div'>
-    <form>
+    
      <input type="text" id="input-first-name" placeholder="First Name" [(ngModel)]="firstName" />
-     <label id="errorLabel">{{firstNameError}} </label><br>
+     <label id="firstname-label">{{firstNameError}} </label><br>
      <input type="text" id="input-last-name" placeholder="Last Name" [(ngModel)]="lastName" />
-     <label id="errorLabel">{{lastNameError}} </label><br>
+     <label id="lastname-label">{{lastNameError}} </label><br>
      <input type="text" id="input-email" placeholder="Email" [(ngModel)]="email" />
-     <label id="errorLabel">{{emailError}} </label><br>
+     <label id="email-label">{{emailError}} </label><br>
      <input type="text" id="input-phone" placeholder="Phone" [(ngModel)]="phone" />
-     <label id="errorLabel">{{phoneError}} </label><br>
-    </form>
+     <label id="phone-label">{{phoneError}} </label><br>
+   
   </div>
 
   <div id='bottom-div'>
@@ -25,13 +25,13 @@
     </select>
    
     <input id="input-city" [(ngModel)]="city" placeholder="City" />
-    <label id="errorLabel">{{cityError}} </label><br>
+    <label id="city-label">{{cityError}} </label><br>
 
     <input id="input-postcode" [(ngModel)]="postcode" placeholder="Postcode" /> <br>
-    <label id="errorLabel">{{postcodeError}}</label> <br>
+    <label id="postcode-label">{{postcodeError}}</label> <br>
 
     <input id="input-address" [(ngModel)]="address" placeholder="Address" /> <br>
-    <label id="errorLabel">{{addressError}}</label> <br>
+    <label id="address-label">{{addressError}}</label> <br>
 
     <input id="input-additional-info" placeholder="Additional info" /> <br>
     </form>
