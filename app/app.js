@@ -8,8 +8,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var http_1 = require('angular2/http');
 var Form = (function () {
-    function Form() {
+    function Form(http) {
+        this.http = http;
         //This would come from an api
         this.countries = ["Ireland", "United Kingdom"];
         this.city = "";
@@ -26,6 +28,7 @@ var Form = (function () {
         this.emailError = "";
         this.phone = "";
         this.phoneError = "";
+        this.http = http;
     }
     Form.prototype.onSubmit = function () {
         var valid = true;
@@ -34,55 +37,30 @@ var Form = (function () {
             this.cityError = "City field is required***";
             valid = false;
         }
-        if (valid === true) {
-            this.cityError = "";
-            alert("sent");
-        }
         // postcode error
         if (this.postcode === "") {
             this.postcodeError = "Postcode field is required***";
             valid = false;
-        }
-        if (valid === true) {
-            this.postcodeError = "";
-            alert("Success! Details sent!");
-            return;
         }
         // address error
         if (this.address === "") {
             this.addressError = "Address field is required***";
             valid = false;
         }
-        if (valid === true) {
-            this.addressError = "";
-            alert("sent");
-        }
         // firstname error
         if (this.firstName === "") {
             this.firstNameError = "First Name field is required***";
             valid = false;
-        }
-        if (valid === true) {
-            this.firstNameError = "";
-            alert("sent");
         }
         // lastname error
         if (this.lastName === "") {
             this.lastNameError = "Last Name field is required***";
             valid = false;
         }
-        if (valid === true) {
-            this.lastNameError = "";
-            alert("sent");
-        }
         // email error
         if (this.email === "") {
             this.emailError = " Email field is required***";
             valid = false;
-        }
-        if (valid === true) {
-            this.emailError = "";
-            alert("sent");
         }
         // phone error 
         if (this.phone === "") {
@@ -90,16 +68,25 @@ var Form = (function () {
             valid = false;
         }
         if (valid === true) {
+            this.lastNameError = "";
             this.phoneError = "";
+            this.postcodeError = "";
+            this.addressError = "";
+            this.firstNameError = "";
+            this.cityError = "";
+            this.emailError = "";
             alert("sent");
         }
+    };
+    Form.prototype.onKey = function () {
+        console.log(this);
     };
     Form = __decorate([
         core_1.Component({
             selector: 'todo-app',
             templateUrl: 'app/app.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], Form);
     return Form;
 })();

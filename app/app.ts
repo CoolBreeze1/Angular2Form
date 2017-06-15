@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {Http} from 'angular2/http';
 
 @Component({
 	selector: 'todo-app',
@@ -23,10 +24,11 @@ export default class Form{
   postcodeError: string;
   address: string;
   addressError: string;
+  lat: number;
+  lng: number;
 
 
-
-  constructor() {
+  constructor(private http: Http) {
     //This would come from an api
     this.countries = ["Ireland", "United Kingdom"];
 
@@ -44,7 +46,7 @@ export default class Form{
     this.emailError = "";
     this.phone = "";
     this.phoneError = "";
-
+    this.http = http;
   }
 
   onSubmit(){
@@ -55,20 +57,10 @@ export default class Form{
       valid = false;
     }
 
-    if(valid === true) {
-      this.cityError = "";
-      alert("sent");
-    }
 // postcode error
     if(this.postcode === "") {
       this.postcodeError = "Postcode field is required***";
       valid = false;
-    }
-
-    if (valid === true){
-      this.postcodeError = "";
-      alert("Success! Details sent!");
-      return
     }
 
 // address error
@@ -78,41 +70,24 @@ export default class Form{
      valid = false;
     }
 
-    if (valid === true){
-     this.addressError = "";
-     alert("sent");
-    }
-
 // firstname error
     if(this.firstName === "") {
      this.firstNameError = "First Name field is required***";
      valid = false;
     }
 
-    if(valid === true) {
-      this.firstNameError = "";
-      alert("sent");
-    }
 // lastname error
     if(this.lastName === "") {
      this.lastNameError = "Last Name field is required***";
      valid = false;
     }
 
-    if(valid === true) {
-     this.lastNameError = "";
-     alert("sent");
-    }
 // email error
     if(this.email === "") {
      this.emailError = " Email field is required***";
      valid = false;
     }
 
-    if(valid === true) {
-     this.emailError = "";
-     alert("sent");
-    }
 // phone error 
     if(this.phone === "") {
      this.phoneError = "Phone Number field is required***";
@@ -120,10 +95,18 @@ export default class Form{
     }
 
     if(valid === true) {
+     this.lastNameError = "";
      this.phoneError = "";
+     this.postcodeError = "";
+     this.addressError = "";
+     this.firstNameError = "";
+     this.cityError = "";
+     this.emailError = "";
      alert("sent");
     }
+  }
 
-
+  onKey(){
+    console.log(this);
   }
 }

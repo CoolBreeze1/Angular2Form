@@ -27,13 +27,20 @@
     <input id="input-city" [(ngModel)]="city" placeholder="City" />
     <label id="city-label">{{cityError}} </label><br>
 
-    <input id="input-postcode" [(ngModel)]="postcode" placeholder="Postcode" /> <br>
+    <input id="input-postcode" (keyup)="onKey($event)"  [(ngModel)]="postcode" placeholder="Postcode" /> <br>
     <label id="postcode-label">{{postcodeError}}</label> <br>
 
-    <input id="input-address" [(ngModel)]="address" placeholder="Address" /> <br>
+    <input id="input-address" [(ngModel)]="address" placeholder="Address"  /> <br>
     <label id="address-label">{{addressError}}</label> <br>
 
-    <input id="input-additional-info" placeholder="Additional info" /> <br>
+
+    <br/><br/>
+
+    <input id="input-lat" [(ngModel)]="lat" placeholder="Latitude" />
+    <input id="input-lng" [(ngModel)]="lng" placeholder="Longitude" />
+    <input id="input-additional-info" placeholder="Additional info" /> 
+
+
     </form>
     <button (click)="onSubmit()">Submit</button>
    
